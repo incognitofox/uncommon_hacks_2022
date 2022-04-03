@@ -3,3 +3,4 @@ gunicorn
 opencv-contrib-python
 imutils
 Jinja2
+sqlalchemy
