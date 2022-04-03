@@ -5,3 +5,4 @@ imutils
 Jinja2
 sqlalchemy
 apscheduler
+flask_socketio
