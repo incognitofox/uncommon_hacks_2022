@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, flash, redirect,\
  url_for, flash, make_response, session
-from imutils.video import VideoStream
+# from imutils.video import VideoStream
 from flask import Response
 from flask import Flask
 from flask import render_template
