@@ -10,14 +10,14 @@ import argparse
 import datetime
 import imutils
 import time
-import cv2
+#import cv2
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask_socketio import SocketIO, emit
-
+'''
 outputFrame = None
 lock = threading.Lock()
 vs = VideoStream(src=0).start()
@@ -59,7 +59,7 @@ def detect_motion(frameCount=32):
 		with lock:
 			outputFrame = frame.copy()
 
-
+'''
 from database import init_db
 
 init_db()
@@ -125,7 +125,7 @@ def queue():
     return redirect(url_for('index'))
 
 
-
+'''
 
 @app.route("/video_feed")
 def video_feed():
@@ -133,7 +133,7 @@ def video_feed():
 	# type (mime type)
 	return Response(generate(),
 		mimetype = "multipart/x-mixed-replace; boundary=frame")
-
+'''
 @app.route("/viewer")
 def viewer():
 	# return the response generated along with the specific media
@@ -176,10 +176,10 @@ if __name__ == '__main__':
      # s = sched.scheduler(time.time, time.sleep)
      # s.enter(60, 1, change_link, (s,))
      # s.run()
-
-     t1 = threading.Thread(target=detect_motion)
-     t1.daemon = True
-     t1.start()
+     
+     # t1 = threading.Thread(target=detect_motion)
+     # t1.daemon = True
+     # t1.start()
 
      socketio.run(app)
      # app.run(threaded=True)
